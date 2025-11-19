@@ -136,6 +136,195 @@
 				}
 			}
 		</style>
+		 <style>
+
+
+        .carousel-section {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .carousel-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .carousel-header h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .carousel-header p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+        }
+
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            gap: 0rem;
+        }
+
+        .experience-card {
+            min-width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .experience-logo {
+            flex-shrink: 0;
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .experience-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .experience-title {
+            color: white;
+            font-size: 1.8rem;
+            margin: 0 0 0.5rem 0;
+            font-weight: 600;
+        }
+
+        .experience-company {
+            color: rgba(245, 106, 106, 0.9);
+            font-size: 1.3rem;
+            margin: 0 0 0.5rem 0;
+            font-weight: 500;
+        }
+
+        .experience-date {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1rem;
+            margin: 0 0 1.5rem 0;
+        }
+
+        .experience-description {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: rgba(245, 106, 106, 0.3);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(245, 106, 106, 0.5);
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .carousel-btn {
+            background: rgba(245, 106, 106, 0.6);
+            color: white;
+            border: 2px solid rgba(245, 106, 106, 0.8);
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(245, 106, 106, 0.8);
+            transform: scale(1.1);
+        }
+
+        .carousel-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: rgba(245, 106, 106, 0.9);
+            width: 30px;
+            border-radius: 6px;
+        }
+
+        @media (max-width: 768px) {
+            .experience-card {
+                padding: 2rem;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .experience-logo {
+                width: 100px;
+                height: 100px;
+                font-size: 2.5rem;
+            }
+
+            .experience-title {
+                font-size: 1.5rem;
+            }
+
+            .experience-company {
+                font-size: 1.1rem;
+            }
+
+            .experience-skills {
+                justify-content: center;
+            }
+        }
+    </style>
 	</head>
 	<body class="is-preload">
 
@@ -196,6 +385,91 @@
 	</div>
 </section>
 
+<section>
+  <div class="carousel-section">
+        <div class="carousel-header">
+            <h2>Work Experience</h2>
+            <p>My professional journey in technology and innovation</p>
+        </div>
+
+        <div class="carousel-container">
+            <div class="carousel-track" id="carouselTrack">
+                <!-- Experience 1: Outlier AI -->
+                <div class="experience-card">
+                    <img class="experience-logo" src="images/outlierlogo.png"/>
+                    <div class="experience-content">
+                        <h3 class="experience-title">Expert Coder</h3>
+                        <div class="experience-company">Outlier AI</div>
+                        <p class="experience-description">
+                            Leading quality assurance initiatives for Large Language Models across multiple specialized projects. Focused on system prompt engineering, physics simulation testing, and reinforcement learning optimization. Developed comprehensive testing protocols and golden solution standards for complex AI interactions.
+                        </p>
+                        <div class="experience-skills">
+                            <span class="skill-tag">LLM Engineering</span>
+                            <span class="skill-tag">Prompt Engineering</span>
+                            <span class="skill-tag">Quality Assurance</span>
+                            <span class="skill-tag">MCP Servers</span>
+                            <span class="skill-tag">RLVR</span>
+                            <span class="skill-tag">Python</span>
+							<span class="skill-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 2: Idrix Technology -->
+                <div class="experience-card">
+                     <img class="experience-logo" src="images/idrix.png"/>
+                    <div class="experience-content">
+                        <h3 class="experience-title">AI/ML Engineer & Full Stack Developer</h3>
+                        <div class="experience-company">Idrix Technology</div>
+                        <p class="experience-description">
+                            Architected and deployed end-to-end machine learning solutions for financial prediction systems. Built scalable FastAPI services with clean architecture patterns, developed MCP servers for financial management, and created comprehensive Power BI dashboards with real-time MySQL integration. Delivered automated reporting solutions and predictive analytics tools.
+                        </p>
+                        <div class="experience-skills">
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">FastAPI</span>
+							<span class="skill-tag">Node.js</span>
+							<span class="skill-tag">Typescript</span>
+                            <span class="skill-tag">Power BI</span>
+                            <span class="skill-tag">MCP Server</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">MySQL</span>
+							<span class="skill-tag">Docker</span>
+                            <span class="skill-tag">AWS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 3: Freelance/Projects -->
+                <div class="experience-card">
+                    <div class="experience-logo">🚀</div>
+                    <div class="experience-content">
+                        <h3 class="experience-title">Software Engineer & Data Analyst</h3>
+                        <div class="experience-company">Independent Projects</div>
+                        <p class="experience-description">
+                            Developed diverse solutions including cloud-native invoice systems for Ecuadorian microbusinesses, IoT monitoring dashboards with Raspberry Pi and AWS, and data analytics projects processing millions of health records. Created NLP-based classification systems and comprehensive business intelligence platforms with multi-format reporting capabilities.
+                        </p>
+                        <div class="experience-skills">
+                            <span class="skill-tag">Full Stack Development</span>
+                            <span class="skill-tag">Data Analysis</span>
+                            <span class="skill-tag">NLP</span>
+                            <span class="skill-tag">IoT</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-controls">
+            <button class="carousel-btn" id="prevBtn" onclick="moveCarousel(-1)">‹</button>
+            <div class="carousel-dots" id="dotsContainer"></div>
+            <button class="carousel-btn" id="nextBtn" onclick="moveCarousel(1)">›</button>
+        </div>
+    </div>
+</section>
+
 
 					<section>
 						<header class="major">
@@ -213,6 +487,7 @@
 								<ul class="actions" style="display: flex; justify-content: center;">
 									<li><a href="videos/output.mp4" class="button">Demo Video </a></li>
 								</ul>
+								&nbsp;
 							</article>
 
 							<article data-category="ai">
@@ -222,6 +497,7 @@
 								<ul class="actions" style="display: flex; justify-content: center; ">
 									<li><a href="https://gitlab.com/coral.milton/diccionario-anki-jp/-/blob/main/prueba.ipynb" class="button">Machine Learning Model Sample</a></li>
 								</ul>
+								&nbsp;
 							</article>
 
 							<article data-category="ai">
@@ -232,6 +508,7 @@
 								<ul class="actions" style="display: flex; justify-content: center; ">
 									<li><a class="button" href="https://gitlab.com/coral.milton/diccionario-anki-jp/-/blob/main/game1.py">Code Sample</a></li>
 								</ul>
+								&nbsp;
 							</article>
 
 							<article data-category="ai">
@@ -242,12 +519,14 @@
 								<ul class="actions" style="display: flex; justify-content: center; ">
 									<li><a class="button" href="task_sample.html">System Prompt Task Sample</a></li>
 								</ul>
+								&nbsp;
 							</article>
 
 							<article data-category="ai">
 								<a class="image"><img src="images/outlier ai2.png" alt="" /></a>
 								<h3>Outlier AI - World Tools Quest Project</h3>
 								<p style="line-height: 2;">Innovative reinforcement learning project designed to enhance Large Language Model performance in MCP tool-calling tasks through Reinforcement Learning with Verifiable Rewards (RLVR). Implements a sophisticated rubric-based reward system that provides detailed, multi-dimensional feedback for complex, multi-step reasoning processes.</p>
+								&nbsp;
 							</article>
 
 							<!-- DATA Projects -->
@@ -258,6 +537,7 @@
 								<ul class="actions" style="display: flex; justify-content: center; ">
 									<li><a href="https://gitlab.com/coral.milton/analysis-of-streets-with-high-accident-rates-in-quito-ecuador/-/blob/main/Data_analysis.ipynb?ref_type=heads" class="button">Repository</a></li>
 								</ul>
+								&nbsp;
 							</article>
 
 							<article data-category="data">
@@ -267,18 +547,21 @@
 								<ul class="actions" style="display: flex; justify-content: center; ">
 									<li><a href="https://mi1w0i-lancelot.shinyapps.io/APP_CASOS_CLINICOS_SHINY/" class="button">Repository</a></li>
 								</ul>
+								&nbsp;
 							</article>
 
 							<article data-category="data">
 								<a class="image"><img src="images/idrix_powerbi.png" alt="" /></a>
 								<h3>Insurance and Financial Data Analysis Dashboard for Idrix Technology</h3>
 								<p style="line-height: 2;">Comprehensive Power BI analytics solution with interactive dashboards for insurance amounts, loans, poverty levels, and customer segmentation. Features dynamic visualizations and custom filtering for strategic business intelligence.</p>
+								&nbsp;
 							</article>
 
 							<article data-category="data">
 								<a class="image"><img src="images/idrix_powerbi2.png" alt="" /></a>
 								<h3>Real-Time Financial Analysis Dashboard for IDRIX Company</h3>
 								<p style="line-height: 2;">Power BI solution with live MySQL integration delivering real-time financial intelligence. Features client revenue analysis, income vs expense metrics, and payment method distribution with continuous monitoring capabilities.</p>
+								&nbsp;
 							</article>
 
 							<!-- Code Projects -->
@@ -289,6 +572,7 @@
 								<ul class="actions" style="display: flex; justify-content: center; ">
 									<li><a href="https://gitlab.com/coral.milton/dashboard_aws_pi_4" class="button">Repository</a></li>
 								</ul>
+								&nbsp;
 							</article>
 
 							<article data-category="code">
@@ -298,6 +582,7 @@
 								<ul class="actions" style="display: flex; justify-content: center; ">
 									<li><a href="https://dspace.ups.edu.ec/handle/123456789/27270?locale=en" class="button">Publication</a></li>
 								</ul>
+								&nbsp;
 							</article>
 
 							<article data-category="code">
@@ -307,6 +592,7 @@
 								<ul class="actions" style="display: flex; justify-content: center; ">
 									<li><a href="https://gitlab.com/coral.milton/proyecto_de_grado_donbosco" class="button">Repository</a></li>
 								</ul>
+								&nbsp;
 							</article>
 
 							<article data-category="code">
@@ -316,6 +602,7 @@
 								<ul class="actions" style="display: flex; justify-content: center; ">
 									<li><a href="https://gitlab.com/coral.milton/proyecto-clasificador-de-idioma-ofensivo" class="button">Repository</a></li>
 								</ul>
+								&nbsp;
 							</article>
 
 							<article data-category="code">
@@ -325,6 +612,7 @@
 								<ul class="actions" style="display: flex; justify-content: center; ">
 									<li><a href="https://gitlab.com/coral.milton/postgres-api-reports" class="button">Repository</a></li>
 								</ul>
+								&nbsp;
 							</article>
 
 						</div>
@@ -416,7 +704,83 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		    <script>
+        let currentIndex = 0;
+        const track = document.getElementById('carouselTrack');
+        const cards = track.children;
+        const totalCards = cards.length;
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dotsContainer = document.getElementById('dotsContainer');
 
+        // Create dots
+        for (let i = 0; i < totalCards; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            if (i === 0) dot.classList.add('active');
+            dot.onclick = () => goToSlide(i);
+            dotsContainer.appendChild(dot);
+        }
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            // Update dots
+            const dots = dotsContainer.children;
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.toggle('active', i === currentIndex);
+            }
+
+            // Update button states
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex === totalCards - 1;
+        }
+
+        function moveCarousel(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = 0;
+            if (currentIndex >= totalCards) currentIndex = totalCards - 1;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            updateCarousel();
+        }
+
+        // Initialize
+        updateCarousel();
+
+ 
+
+        // Pause autoplay on hover
+        track.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+	
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') moveCarousel(-1);
+            if (e.key === 'ArrowRight') moveCarousel(1);
+        });
+
+        // Touch swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        track.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        track.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchStartX - touchEndX > 50) moveCarousel(1);
+            if (touchEndX - touchStartX > 50) moveCarousel(-1);
+        }
+    </script>
 		<script>
 			// Ensure video plays
 			const video = document.getElementById('myVideo');
