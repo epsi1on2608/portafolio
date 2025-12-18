@@ -707,6 +707,25 @@
 
         /* ===== OPTIMIZACIÓN PARA MÓVIL - ANTI-FLICKERING ===== */
 @media (max-width: 768px) {
+    /* Forzar aceleración por hardware */
+    #myVideo,
+    body::before,
+    #wrapper,
+    .carousel-track,
+    .experience-card {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    
+    /* Reducir efectos costosos */
+    .selector-btn,
+    .experience-card,
+    .carousel-btn {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
     
     /* Scroll suave */
     * {
