@@ -705,27 +705,22 @@
             }
         }
 
-/* ===== DESHABILITAR PULL-TO-REFRESH ===== */
-html {
-    overscroll-behavior: none;
-    overscroll-behavior-y: contain;
-}
+        /* ===== OPTIMIZACIÓN PARA MÓVIL - ANTI-FLICKERING ===== */
+@media (max-width: 768px) {
+    
+    /* Scroll suave */
+    * {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Opcional: Ocultar video y usar imagen */
+    /*
+    #myVideo {
+        display: none;
+    }
+    */
 
-body {
-    overscroll-behavior: none;
-    overscroll-behavior-y: contain;
-    /* Prevenir el bounce en iOS */
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-}
 
-#wrapper {
-    height: 100%;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
 }
 
 
@@ -1276,33 +1271,7 @@ body {
 				</div>
 			</div>
 		</div>
-        <script>
-    // Prevenir pull-to-refresh en móviles
-    (function() {
-        let lastTouchY = 0;
-        let preventPullToRefresh = false;
 
-        document.addEventListener('touchstart', function(e) {
-            if (e.touches.length !== 1) return;
-            lastTouchY = e.touches[0].clientY;
-            // Verificar si estamos en el top
-            preventPullToRefresh = window.scrollY === 0;
-        }, { passive: false });
-
-        document.addEventListener('touchmove', function(e) {
-            const touchY = e.touches[0].clientY;
-            const touchYDelta = touchY - lastTouchY;
-            
-            // Si estamos en el top y el usuario hace scroll hacia abajo (pull)
-            if (preventPullToRefresh && touchYDelta > 0 && window.scrollY === 0) {
-                e.preventDefault();
-            }
-            
-            lastTouchY = touchY;
-        }, { passive: false });
-    })();
-</script>
-        </script>
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/browser.min.js"></script>
 		<script src="assets/js/breakpoints.min.js"></script>
